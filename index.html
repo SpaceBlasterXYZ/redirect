@@ -15,6 +15,7 @@
     }
     function go() {
       const webpage = webpagedictionary[document.getElementById("input").textContent]
+      console.log(webpage)
       if (webpage) {
         window.replace(webpage)
         document.getElementById("result").innerHTML = "TRAVELING TO "+webpage
