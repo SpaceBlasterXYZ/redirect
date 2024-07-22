@@ -11,16 +11,15 @@
   </body>
   <script>
     const webpagedictionary = {
-      "codesave": "https://docs.google.com/spreadsheets/d/1Tu8rIDTOa-ZcTbAeJ7CmQ7kdQz-mbJ8yM3cCA5StHdI/edit"
+      codesave: "https://docs.google.com/spreadsheets/d/1Tu8rIDTOa-ZcTbAeJ7CmQ7kdQz-mbJ8yM3cCA5StHdI/edit"
     }
     function go() {
-      const webpage = webpagedictionary[document.getElementById("input").textContent]
-      console.log(webpage)
+      const webpage = webpagedictionary[document.getElementById("input").value]
       if (webpage) {
-        window.replace(webpage)
+        window.location.replace(webpage)
         document.getElementById("result").innerHTML = "TRAVELING TO "+webpage
       } else {
-        document.getElementById("input").innerHTML = ""
+        document.getElementById("input").value = ""
         document.getElementById("result").innerHTML = "FAILED. Couldn't Find The Webpage Using The Key"
       }
     }
