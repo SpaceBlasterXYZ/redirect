@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirect</title>
+  </head>
+  <body>
+    <h1>Redirecting To...</h1>
+    <input id="input" placeholder="Where To Go?">
+    <button onclick="go()"></button>
+    <p id="result"></p>
+  </body>
+  <script>
+    const webpagedictionary = {
+      "codesave": "https://docs.google.com/spreadsheets/d/1Tu8rIDTOa-ZcTbAeJ7CmQ7kdQz-mbJ8yM3cCA5StHdI/edit"
+    }
+    function go() {
+      const webpage = webpagedictionary[document.getElementById("input").textContent]
+      if (webpage) {
+        window.replace(webpage)
+        document.getElementById("result").innerHTML = "TRAVELING TO "+webpage
+      } else {
+        document.getElementById("input").innerHTML = ""
+        document.getElementById("result").innerHTML = "FAILED. Couldn't Find The Webpage Using The Key"
+      }
+    }
+  </script>
+</html>
